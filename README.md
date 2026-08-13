@@ -1,117 +1,115 @@
-# 👩‍💼 Employee Management System — SQL & MySQL
+# Employee Management System
 
-> **A complete SQL-based Employee Management System designed to manage, organize, and analyze employee data using a relational database.**
+<div align="center">
 
-This project demonstrates the practical implementation of **MySQL and SQL** for managing employee records, departments, job roles, salaries, bonuses, qualifications, leaves, and payroll information.
+## SQL & MySQL Database Management Project
 
-It also includes multiple SQL queries to generate meaningful **business insights** from the employee database.
+A practical relational database project for managing and analyzing **employees, departments, salaries, bonuses, qualifications, leaves, and payroll** using SQL.
 
----
+<br>
 
-## 🏷️ Project Overview
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-Analysis-CC2927?style=for-the-badge)
+![Database](https://img.shields.io/badge/Relational-Database-6DB33F?style=for-the-badge)
+![Status](https://img.shields.io/badge/Project-Completed-2EA44F?style=for-the-badge)
 
-The **Employee Management System** is a relational database project developed using **MySQL**.
-
-The system is designed to maintain structured employee information and perform analysis across different areas of an organization.
-
-### The project covers:
-
-* 👤 Employee Information
-* 🏢 Department & Job Roles
-* 💰 Salary & Bonus Management
-* 🎓 Employee Qualifications
-* 🏖️ Leave Management
-* 💳 Payroll Management
-* 📊 SQL-based Business Analysis
+</div>
 
 ---
 
-## 🎯 Project Objectives
+## 📌 Project Overview
 
-The main objectives of this project are to:
+The **Employee Management System** is a MySQL-based relational database project designed to store, manage, and analyze employee-related information in a structured way.
 
-* Design a structured relational database for employee management.
-* Store employee and organizational information efficiently.
-* Establish relationships between different database entities.
-* Manage salary, bonus, leave, qualification, and payroll information.
-* Perform analytical queries using SQL.
-* Extract meaningful insights from employee data.
-* Demonstrate practical knowledge of MySQL and relational database concepts.
+The project covers employee records, departments, job roles, salary and bonus details, qualifications, leave records, and payroll information. SQL queries are used to extract meaningful information and generate business-oriented insights from the database.
+
+This project demonstrates the practical application of **SQL, relational database design, table relationships, constraints, joins, aggregation, filtering, and data analysis**.
 
 ---
 
-## 🗄️ Database Architecture
+## 🎯 Objectives
 
-The database contains **six major tables** that work together to manage employee-related information.
-
-| Table           | Purpose                                             |
-| --------------- | --------------------------------------------------- |
-| `JobDepartment` | Stores department and job-role information          |
-| `SalaryBonus`   | Stores employee salary and bonus details            |
-| `Employee`      | Stores employee personal and employment information |
-| `Qualification` | Stores employee educational qualifications          |
-| `Leaves`        | Stores employee leave records                       |
-| `Payroll`       | Stores payroll and compensation information         |
-
-### 🔗 Relationship Overview
-
-```text
-                    ┌─────────────────────┐
-                    │   JobDepartment     │
-                    │─────────────────────│
-                    │ dept_id             │
-                    │ dept_name           │
-                    │ job_role            │
-                    └──────────┬──────────┘
-                               │
-                               │
-                    ┌──────────▼──────────┐
-                    │      Employee       │
-                    │─────────────────────│
-                    │ emp_id              │
-                    │ emp_name            │
-                    │ dept_id             │
-                    │ salary_bonus_id     │
-                    └──────┬─────┬────────┘
-                           │     │
-             ┌─────────────┘     └──────────────┐
-             │                                  │
-   ┌─────────▼──────────┐             ┌────────▼─────────┐
-   │    Qualification   │             │    SalaryBonus    │
-   │────────────────────│             │───────────────────│
-   │ qualification_id   │             │ salary_bonus_id   │
-   │ emp_id             │             │ salary            │
-   │ degree             │             │ bonus             │
-   └────────────────────┘             └───────────────────┘
-
-             │
-             │
-   ┌─────────▼──────────┐             ┌───────────────────┐
-   │       Leaves      │             │      Payroll       │
-   │───────────────────│             │───────────────────│
-   │ leave_id          │             │ payroll_id        │
-   │ emp_id            │             │ emp_id            │
-   │ leave_type        │             │ net_pay           │
-   │ leave_days        │             │ deductions        │
-   └───────────────────┘             └───────────────────┘
-```
+- Design and implement a structured relational database.
+- Manage employee and department information.
+- Establish relationships between related entities.
+- Manage salary, bonus, qualification, leave, and payroll data.
+- Perform data analysis using SQL queries.
+- Generate useful business insights from employee data.
+- Demonstrate practical knowledge of MySQL and SQL.
 
 ---
 
-## 🛠️ Technology Stack
+## 🗄️ Database Structure
 
-| Technology          | Usage                                      |
-| ------------------- | ------------------------------------------ |
-| **MySQL**           | Database Management System                 |
-| **SQL**             | Database creation, manipulation & analysis |
-| **MySQL Workbench** | Query execution & database management      |
-| **GitHub**          | Project version control & documentation    |
+The database contains **six main tables**:
+
+| Table | Description |
+|---|---|
+| `JobDepartment` | Stores department and job-role information |
+| `Employee` | Stores employee personal and employment details |
+| `SalaryBonus` | Stores salary and bonus information |
+| `Qualification` | Stores employee qualification records |
+| `Leaves` | Stores employee leave information |
+| `Payroll` | Stores payroll and compensation records |
 
 ---
 
-## 🧠 SQL Concepts Demonstrated
+## 🧩 Entity Relationship Diagram
 
-This project covers important SQL concepts used in real-world database development and analysis.
+The ER diagram below represents the structure of the Employee Management System and the relationships between its major entities.
+
+<div align="center">
+
+<img width="1538" height="887" alt="image" src="https://github.com/user-attachments/assets/66a67bd9-5509-45e2-9521-5c49cabc2fb7" />
+
+
+</div>
+
+---
+
+## ✨ Key Features
+
+### 👤 Employee Management
+- Employee record management
+- Gender-wise employee analysis
+- Department-wise employee distribution
+- Job-role analysis
+- Location-based analysis
+
+### 🏢 Department & Job Role Analysis
+- Department-wise employee count
+- Job-role distribution
+- Department-level workforce analysis
+- Salary comparison across departments
+
+### 💰 Salary & Bonus Analysis
+- Total salary expenditure
+- Average salary
+- Highest and lowest salary
+- Bonus analysis
+- Salary and bonus comparison
+
+### 🎓 Qualification Analysis
+- Employee qualification records
+- Degree-wise analysis
+- Qualification distribution
+
+### 🏖️ Leave Analysis
+- Leave records
+- Leave types
+- Leave duration
+- Employee leave patterns
+
+### 💳 Payroll Analysis
+- Employee-wise payroll
+- Net pay
+- Deductions
+- Compensation analysis
+- Payroll expenditure
+
+---
+
+## 🛠️ SQL Concepts Used
 
 ### Database Operations
 
@@ -131,7 +129,7 @@ UPDATE
 DELETE
 ```
 
-### Data Retrieval
+### Data Retrieval & Filtering
 
 ```text
 SELECT
@@ -144,7 +142,7 @@ IS NULL
 ORDER BY
 ```
 
-### Aggregate Functions
+### Aggregation & Grouping
 
 ```text
 COUNT()
@@ -152,29 +150,22 @@ SUM()
 AVG()
 MIN()
 MAX()
-```
-
-### Data Grouping
-
-```text
 GROUP BY
 HAVING
 ```
 
-### Relationships & Joins
+### Relationships
 
 ```text
-INNER JOIN
-LEFT JOIN
 PRIMARY KEY
 FOREIGN KEY
+INNER JOIN
+LEFT JOIN
 ```
 
 ### Constraints
 
 ```text
-PRIMARY KEY
-FOREIGN KEY
 NOT NULL
 UNIQUE
 CHECK
@@ -183,118 +174,78 @@ DEFAULT
 
 ---
 
-# 📊 Data Analysis
+## 📊 Analysis Performed
 
-The project goes beyond database creation and uses SQL queries to analyze different aspects of employee data.
+The project uses SQL queries to analyze multiple areas of the organization.
 
-## 👥 Employee Analysis
+### Employee Analysis
 
-The employee analysis focuses on:
+- Total employee count
+- Gender-wise distribution
+- Department-wise distribution
+- Job-role distribution
+- Location-based employee analysis
+- Salary-based employee filtering
 
-* Total number of employees
-* Gender-wise employee distribution
-* Department-wise employee distribution
-* Job-role distribution
-* Location-wise employee analysis
-* Salary-based employee filtering
+### Department Analysis
 
----
+- Employee count by department
+- Department-wise salary expenditure
+- Average salary by department
+- Job roles within departments
 
-## 🏢 Department Analysis
+### Salary & Bonus Analysis
 
-Department-level analysis includes:
+- Total salary expenditure
+- Average salary
+- Highest and lowest salary
+- Employee bonus analysis
+- Salary and bonus comparison
 
-* Number of employees in each department
-* Department-wise salary expenditure
-* Average salary by department
-* Job roles within departments
-* Workforce distribution
+### Qualification Analysis
 
----
+- Employee educational qualifications
+- Degree distribution
+- Qualification-wise employee analysis
 
-## 💰 Salary & Bonus Analysis
+### Leave Analysis
 
-Salary-related analysis includes:
+- Employee leave records
+- Leave types
+- Leave duration
+- Leave utilization patterns
 
-* Total salary expenditure
-* Average employee salary
-* Highest salary
-* Lowest salary
-* Salary distribution
-* Employee bonus analysis
-* Employees receiving bonuses
-* Salary and bonus comparison
+### Payroll Analysis
 
----
-
-## 🎓 Qualification Analysis
-
-The qualification section analyzes:
-
-* Employee educational qualifications
-* Qualification-wise employee count
-* Degree distribution
-* Employees based on educational background
+- Employee-wise payroll
+- Net pay
+- Deductions
+- Compensation analysis
+- Payroll expenditure
 
 ---
 
-## 🏖️ Leave Analysis
+## 💡 Business Insights
 
-Leave-related queries analyze:
+The SQL analysis can help management understand:
 
-* Employee leave records
-* Leave types
-* Leave duration
-* Leave utilization
-* Employees with higher leave usage
-
----
-
-## 💳 Payroll Analysis
-
-Payroll analysis includes:
-
-* Employee-wise payroll
-* Net salary
-* Gross salary
-* Deductions
-* Bonus and compensation
-* Total payroll expenditure
-
----
-
-# 📈 Business Insights
-
-The analysis performed using SQL can help organizations understand:
-
-> **Workforce Distribution**
-> Identify how employees are distributed across departments and job roles.
-
-> **Compensation Patterns**
-> Understand salary, bonus, and payroll distribution.
-
-> **Department Performance**
-> Compare workforce size and salary expenditure across departments.
-
-> **Employee Qualifications**
-> Analyze the educational background of employees.
-
-> **Leave Patterns**
-> Understand employee leave utilization and patterns.
-
-> **Payroll Management**
-> Analyze salary, deductions, bonuses, and overall payroll expenditure.
+- **Workforce Distribution** — employee concentration across departments and job roles.
+- **Compensation Patterns** — salary, bonus, and payroll distribution.
+- **Workforce Planning** — department-level workforce requirements.
+- **Employee Qualifications** — educational background of employees.
+- **Leave Patterns** — employee leave utilization.
+- **Payroll Management** — salary, deductions, bonuses, and net pay.
 
 These insights can support better decisions related to **workforce planning, compensation management, payroll management, and employee administration**.
 
 ---
 
-# 🧪 Sample SQL Queries
+## 🔍 Sample SQL Queries
 
 ### Department-wise Employee Count
 
 ```sql
-SELECT 
+SELECT
     jd.dept_name,
     COUNT(e.emp_id) AS employee_count
 FROM Employee e
@@ -307,7 +258,7 @@ ORDER BY employee_count DESC;
 ### Average Salary by Department
 
 ```sql
-SELECT 
+SELECT
     jd.dept_name,
     AVG(sb.salary) AS average_salary
 FROM Employee e
@@ -322,48 +273,51 @@ ORDER BY average_salary DESC;
 ### Total Salary Expenditure
 
 ```sql
-SELECT 
+SELECT
     SUM(salary) AS total_salary_expenditure
 FROM SalaryBonus;
 ```
 
 ---
 
-# 📁 Project Structure
+## 📁 Repository Structure
 
 ```text
 employee-management-system-sql/
 │
-├── 📂 dataset/
-│   └── Employee Management Dataset
+├── dataset/
+│   └── [dataset file(s)]
 │
-├── 📂 sql/
+├── sql/
 │   └── employee_management_project.sql
 │
-├── 📂 presentation/
+├── presentation/
 │   └── employee_management_innomatics.pptx
 │
-├── 📂 video/
-│   └── EMPLOYEE MANAGEMENT PROJECT.mp4
+├── video/
+│   └── employee_management_project.mp4
 │
-└── 📄 README.md
+├── assets/
+│   └── ER_Diagram.png
+│
+└── README.md
 ```
 
 ---
 
-# 🚀 How to Run the Project
+## 🚀 How to Run
 
-### 1️⃣ Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/employee-management-system-sql.git
 ```
 
-### 2️⃣ Open MySQL Workbench
+### 2. Open MySQL Workbench
 
-Open **MySQL Workbench** or any compatible MySQL environment.
+Open **MySQL Workbench** or another MySQL-compatible SQL environment.
 
-### 3️⃣ Open the SQL File
+### 3. Open the SQL File
 
 Navigate to:
 
@@ -371,131 +325,75 @@ Navigate to:
 sql/employee_management_project.sql
 ```
 
-### 4️⃣ Execute the SQL Script
+### 4. Execute the Script
 
-Run the complete script to:
+Run the SQL script to create the database, tables, relationships, insert data, and execute the available analysis queries.
 
-* Create the database
-* Create tables
-* Add constraints
-* Insert data
-* Execute analysis queries
-
-### 5️⃣ Select the Database
+### 5. Select the Database
 
 ```sql
 USE EmployeeManagementDB;
 ```
 
-### 6️⃣ Explore the Queries
+### 6. Explore the Analysis
 
-Run the analysis queries included in the SQL file to explore employee, salary, department, leave, qualification, and payroll insights.
-
----
-
-# 📚 Project Resources
-
-### 📄 SQL Code
-
-The complete database creation, data insertion, and analysis queries are available inside:
-
-```text
-/sql/employee_management_project.sql
-```
-
-### 📊 Project Presentation
-
-The complete project presentation is available inside:
-
-```text
-/presentation/employee_management_innomatics.pptx
-```
-
-### 🎥 Project Video
-
-A project demonstration video is available inside:
-
-```text
-/video/EMPLOYEE MANAGEMENT PROJECT.mp4
-```
-
-### 🗃️ Dataset
-
-The project dataset is available inside:
-
-```text
-/dataset/
-```
+Run the included SQL queries to analyze employee, department, salary, qualification, leave, and payroll information.
 
 ---
 
-# ✨ Key Features
+## 📦 Project Resources
 
-```text
-✓ Relational Database Design
-✓ Employee Data Management
-✓ Department & Job Role Management
-✓ Salary & Bonus Analysis
-✓ Qualification Management
-✓ Leave Management
-✓ Payroll Analysis
-✓ Primary & Foreign Key Relationships
-✓ SQL Joins
-✓ Aggregate Functions
-✓ Business-Oriented Data Analysis
-```
+| Resource | Location |
+|---|---|
+| 🗃️ Dataset | `dataset/` |
+| 💻 SQL Code | `sql/employee_management_project.sql` |
+| 🧩 ER Diagram | `assets/ER_Diagram.png` |
+| 📊 Presentation | `presentation/employee_management_innomatics.pptx` |
+| 🎥 Project Video | `video/employee_management_project.mp4` |
 
 ---
 
-# 🎓 Learning Outcomes
+## 📚 Learning Outcomes
 
 Through this project, I developed practical understanding of:
 
-* Relational Database Management Systems
-* MySQL
-* SQL Query Writing
-* Database Design
-* Entity Relationships
-* Primary & Foreign Keys
-* Constraints
-* SQL Joins
-* Aggregate Functions
-* Data Filtering & Sorting
-* Grouping & Aggregation
-* Business Data Analysis
+- Relational database design
+- MySQL
+- SQL query writing
+- Primary and foreign keys
+- Table relationships
+- SQL joins
+- Aggregate functions
+- Data filtering
+- Grouping and sorting
+- Database constraints
+- Business-oriented data analysis
 
 ---
 
-# 👩‍💻 Author
+## 👩‍💻 Author
 
-## Anwesha Panda
+### Anwesha Panda
 
-**SQL & Database Project**
+**SQL | MySQL | Database Management | Data Analysis**
 
-This project was developed as part of practical learning and implementation of **SQL, MySQL, and Database Management concepts**.
-
----
-
-# ⭐ Project Highlights
-
-| Category          | Details                                                      |
-| ----------------- | ------------------------------------------------------------ |
-| **Project Type**  | Database Management System                                   |
-| **Domain**        | Employee Management                                          |
-| **Database**      | MySQL                                                        |
-| **Language**      | SQL                                                          |
-| **Tables**        | 6                                                            |
-| **Analysis**      | Employee, Department, Salary, Qualification, Leave & Payroll |
-| **Documentation** | SQL + PPT + Video                                            |
-| **Author**        | Anwesha Panda                                                |
+This project was developed as a practical implementation of **SQL and relational database concepts** for an Employee Management System.
 
 ---
 
-# 📌 Conclusion
+## 📌 Project Snapshot
 
-The **Employee Management System** demonstrates how a relational database can be designed and used to manage employee information efficiently.
-
-By combining **database design, SQL queries, table relationships, joins, aggregation, and business analysis**, the project provides a practical implementation of SQL for an employee management use case.
+| Category | Details |
+|---|---|
+| **Project Type** | Database Management System |
+| **Domain** | Employee Management |
+| **Database** | MySQL |
+| **Language** | SQL |
+| **Database Type** | Relational |
+| **Main Tables** | 6 |
+| **Analysis Areas** | Employee, Department, Salary, Qualification, Leave & Payroll |
+| **Resources** | Dataset, SQL Code, ER Diagram, PPT & Video |
+| **Author** | Anwesha Panda |
 
 ---
 
