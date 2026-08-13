@@ -54,17 +54,47 @@ The database contains **six main tables**:
 
 ---
 
-## 🧩 Entity Relationship Diagram
+---
 
-The ER diagram below represents the structure of the Employee Management System and the relationships between its major entities.
+## 🧩 Database Relationship Overview
 
-<div align="center">
+The Employee Management System follows a relational database structure where employee information is connected with departments, salary and bonus details, qualifications, leaves, and payroll records.
 
-<img width="1538" height="887" alt="image" src="https://github.com/user-attachments/assets/66a67bd9-5509-45e2-9521-5c49cabc2fb7" />
+### 🔗 Key Relationships
 
+- **JobDepartment → Employee**  
+  Connects employees with their respective departments and job roles.
 
-</div>
+- **Employee → SalaryBonus**  
+  Links employees with their salary and bonus information.
 
+- **Employee → Qualification**  
+  Maintains the educational qualification details of employees.
+
+- **Employee → Leaves**  
+  Stores and tracks employee leave records.
+
+- **Employee → Payroll**  
+  Connects employees with their payroll and compensation information.
+
+These relationships allow data from multiple tables to be combined using SQL `JOIN` operations and analyzed to generate meaningful business insights.
+
+### 🗃️ Database Flow
+
+```text
+                    JobDepartment
+                          │
+                          ▼
+                      Employee
+                    /    │    \
+                   /     │     \
+                  ▼      ▼      ▼
+        Qualification  SalaryBonus  Leaves
+                             
+                          │
+                          ▼
+                       Payroll
+```
 ---
 
 ## ✨ Key Features
